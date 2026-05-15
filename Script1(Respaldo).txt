@@ -1,0 +1,7 @@
+#!/bin/bash
+# 1. Variable con la fecha y hora actual
+fecha=$(date +"%Y-%m-%d_%H-%M-%S")
+# 2. Guardar el listado ordenado usando esa fecha en el nombre
+ls | sort > "listado_$fecha.txt"
+# 3. Comprimir 
+tar --exclude="*.tar.gz" -czf "respaldo_$fecha.tar.gz" .
